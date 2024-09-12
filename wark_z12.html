@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #result {
+            color: green;
+            font-size: 43px;
+        }
+    </style>
+    <title>
+        Kalkulator sekund
+    </title>
+</head>
+<body>
+
+<h2>Obliczanie różnicy czasu między dwoma dniami stycznia</h2>
+
+<p>Podaj pierwszy dzień (D1_wark):</p>
+<input id="D1_wark" type="number" min="1" max="31">
+
+<p>Podaj pierwszą godzinę (G1_wark):</p>
+<input id="G1_wark" type="number" min="1" max="24">
+
+<p>Podaj drugi dzień (D2_wark):</p>
+<input id="D2_wark" type="number" min="1" max="31">
+
+<p>Podaj drugą godzinę (G2_wark):</p>
+<input id="G2_wark" type="number" min="1" max="24">
+
+<button onclick="calculate()">Oblicz</button>
+
+<p id="result"></p>
+
+<script>
+    function calculate() {
+        var D1_wark = document.getElementById("D1_wark").value;
+        var D2_wark = document.getElementById("D2_wark").value;
+        var G1_wark = document.getElementById("G1_wark").value;
+        var G2_wark = document.getElementById("G2_wark").value;
+
+        var date1 = new Date(2024, 0, D1_wark, G1_wark);
+        var date2 = new Date(2024, 0, D2_wark, G2_wark);
+
+        var differenceInSeconds = Math.abs(date2 - date1) / 1000;
+
+        document.getElementById("result").innerHTML = "Różnica czasu między dniami wynosi: " + differenceInSeconds + " sekund.";
+    }
+</script>
+
+</body>
+</html>
