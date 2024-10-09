@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warkusz 2P</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            font-size: 2cm;
+            color: red;
+        }
+        h3 {
+            font-size: 1.5cm;
+            margin-top: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .buttons-group {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script language="JavaScript">
+        function WinOpen(arg) {
+            window.open(`${arg}.html`, "okienko", "toolbar=no,directories=no,menubar=no,height=480,width=700,top=200,left=400");
+        }
+        function okno_zamknij() {
+            window.close();
+        }
+    </script>
+</head>
+<body>
+<h2>Szkielet zaliczeniowy JavaScript Jakub Warkusz 2P</h2>
+
+<div class="container">
+    <h3>Zadania</h3>
+    <div class="buttons-group" id="zadania">
+        <input type="button" value="zadanie1-warkusz" name="zadanie1" onclick="WinOpen('wark_z1')">
+        <input type="button" value="zadanie2-warkusz" name="zadanie2" onclick="WinOpen('wark_z2')">
+        <input type="button" value="zadanie3-warkusz" name="zadanie3" onclick="WinOpen('wark_z3')">
+        <input type="button" value="zadanie4-warkusz" name="zadanie4" onclick="WinOpen('wark_z4')">
+        <input type="button" value="zadanie5-warkusz" name="zadanie5" onclick="WinOpen('wark_z5')">
+        <input type="button" value="zadanie6-warkusz" name="zadanie6" onclick="WinOpen('wark_z6')">
+        <input type="button" value="zadanie7-warkusz" name="zadanie7" onclick="WinOpen('wark_z7')">
+        <input type="button" value="zadanie8-warkusz" name="zadanie8" onclick="WinOpen('wark_z8')">
+        <input type="button" value="zadanie9-warkusz" name="zadanie9" onclick="WinOpen('wark_z9')">
+        <input type="button" value="zadanie10-warkusz" name="zadanie10" onclick="WinOpen('wark_z10')">
+        <input type="button" value="zadanie11-warkusz" name="zadanie11" onclick="WinOpen('wark_z11')">
+        <input type="button" value="zadanie12-warkusz" name="zadanie12" onclick="WinOpen('wark_z12')">
+        <input type="button" value="zadanie13-warkusz" name="zadanie13" onclick="WinOpen('wark_z13')">
+        <input type="button" value="zadanie14-warkusz" name="zadanie14" onclick="WinOpen('wark_z14')">
+    </div>
+
+    <h3>Kody do zadań</h3>
+    <div class="buttons-group" id="zadania-kody">
+        <input type="button" value="zadanie11 kod-warkusz" name="zadanie11-kod" onclick="WinOpen('wark_z11_kod')">
+        <input type="button" value="zadanie12 kod-warkusz" name="zadanie12-kod" onclick="WinOpen('wark_z12_kod')">
+        <input type="button" value="zadanie13 kod-warkusz" name="zadanie13-kod" onclick="WinOpen('wark_z13_kod')">
+        <input type="button" value="zadanie14 kod-warkusz" name="zadanie14-kod" onclick="WinOpen('wark_z14_kod')">
+    </div>
+
+    <input type="button" value="zamknij okno" onclick="okno_zamknij()">
+</div>
+</body>
+</html>

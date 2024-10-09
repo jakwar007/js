@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+</body>
+<script>
+    var xa_war = parseFloat(prompt("Podaj xa"))
+    var ya_war = parseFloat(prompt("Podaj ya"))
+    var xb_war = parseFloat(prompt("Podaj xb"))
+    var yb_war = parseFloat(prompt("Podaj yb"))
+    var xc_war = parseFloat(prompt("Podaj xc"))
+    var yc_war = parseFloat(prompt("Podaj yc"))
+    document.getElementById("result").innerHTML = `AB=${AB_war().toFixed(2)} BC=${BC_war().toFixed(2)} AC=${AC_war().toFixed(2)}`;
+
+    function AB_war() {
+        return Math.sqrt(Math.pow(xb_war-xa_war, 2) + Math.pow(yb_war-ya_war,2));
+    }
+
+    function BC_war() {
+        return Math.sqrt(Math.pow(xc_war-xb_war, 2) + Math.pow(yc_war-yb_war,2));
+    }
+
+    function AC_war() {
+        return Math.sqrt(Math.pow(xc_war-xa_war, 2)+ Math.pow(yc_war-ya_war,2));
+    }
+
+    console.log(AB_war());
+</script>
+</html>

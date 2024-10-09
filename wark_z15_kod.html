@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kod - zadanie 11</title>
+</head>
+<body>
+    <textarea style="width: 400px; height:850px;">
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -27,13 +36,14 @@
 <script>
     function calculate() {
         let m = parseInt(document.getElementById("m").value);
-        let egipski1 = m+2;
-        let egipski2 = (egipski1+1)*(egipski1+2);
-        let egipski3 = egipski1*(egipski1+1);
-        
+        let egipski = m/2;
 
-        document.getElementById("result").innerHTML = `Wynik: 1/${egipski1} + 1/${egipski2} + 1/${egipski3}`;
+        document.getElementById("result").innerHTML = `Wynik: 1/${m} = 1/${egipski} + 1/${egipski}`;
     }
 </script>
+</body>
+</html>
+        
+    </textarea>
 </body>
 </html>

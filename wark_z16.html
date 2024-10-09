@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #result {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+<h2 id="result"></h2>
+<script>
+    let a = parseInt(prompt("Podaj a"));
+    let b = parseInt(prompt("Podaj b"));
+    let first = a*a*a;
+    let second = 3*(a*a)*2;
+    let third = 3*(a)*(b*b);
+    let fourth = b*b*b;
+    let result = first + second + third + fourth;
+    console.log(first);
+    document.getElementById("result").innerHTML = `(${a} + ${b})^3 = ${a}^3 + 3*1((${a})^2)*(${b}) + 3*(${a})*((${b})^2) + ${b}^3 = ${first} + ${second} + ${third} + ${fourth} = ${result}`;
+</script>
+</body>
+</html>
