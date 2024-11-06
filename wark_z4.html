@@ -1,14 +1,28 @@
-<!DOCTYPE html>
-
-<html lang="pl">
-<head>
+<!DOCTYPE html><html lang="pl"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Warkusz 2P</title>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+        }
+        input[type="button"] {
+            background-color: #f5f5f5;
+            text-transform: uppercase;
+            font-weight: 600;
+            border: 1px solid rgb(248, 0, 0);
+            height: 32px;
+            margin: 4px;
+            border-radius: 4px;
+            font-family: "Inter", sans-serif;
+            transition: ease-in-out 0.22s;
+        }
+        input[type="button"]:hover {
+            transform: scale(1.3);
+            margin: 0 15px 0 15px;
+            cursor: pointer;
         }
         h2 {
             font-size: 2cm;
@@ -41,11 +55,12 @@
 <div class="container">
 <h3>Zadania</h3>
 <div class="buttons-group" id="zadania">
-<input name_attr="wark_z1" onclick="WinOpen('wark_z1')" type="button" value="wark_z1-warkusz"/><input name_attr="wark_z2" onclick="WinOpen('wark_z2')" type="button" value="wark_z2-warkusz"/><input name_attr="wark_z3" onclick="WinOpen('wark_z3')" type="button" value="wark_z3-warkusz"/><input name_attr="wark_z4" onclick="WinOpen('wark_z4')" type="button" value="wark_z4-warkusz"/><input name_attr="wark_z5" onclick="WinOpen('wark_z5')" type="button" value="wark_z5-warkusz"/><input name_attr="wark_z6" onclick="WinOpen('wark_z6')" type="button" value="wark_z6-warkusz"/><input name_attr="wark_z7" onclick="WinOpen('wark_z7')" type="button" value="wark_z7-warkusz"/><input name_attr="wark_z8" onclick="WinOpen('wark_z8')" type="button" value="wark_z8-warkusz"/><input name_attr="wark_z9" onclick="WinOpen('wark_z9')" type="button" value="wark_z9-warkusz"/><input name_attr="wark_z10" onclick="WinOpen('wark_z10')" type="button" value="wark_z10-warkusz"/><input name_attr="wark_z11" onclick="WinOpen('wark_z11')" type="button" value="wark_z11-warkusz"/><input name_attr="wark_z12" onclick="WinOpen('wark_z12')" type="button" value="wark_z12-warkusz"/><input name_attr="wark_z13" onclick="WinOpen('wark_z13')" type="button" value="wark_z13-warkusz"/><input name_attr="wark_z14" onclick="WinOpen('wark_z14')" type="button" value="wark_z14-warkusz"/><input name_attr="wark_z15" onclick="WinOpen('wark_z15')" type="button" value="wark_z15-warkusz"/><input name_attr="wark_z16" onclick="WinOpen('wark_z16')" type="button" value="wark_z16-warkusz"/><input name_attr="wark_z18" onclick="WinOpen('wark_z18')" type="button" value="wark_z18-warkusz"/><input name_attr="wark_z19" onclick="WinOpen('wark_z19')" type="button" value="wark_z19-warkusz"/><input name_attr="wark_z20" onclick="WinOpen('wark_z20')" type="button" value="wark_z20-warkusz"/><input name_attr="wark_z21" onclick="WinOpen('wark_z21')" type="button" value="wark_z21-warkusz"/></div>
+<input name_attr="wark_z1" onclick="WinOpen(&#39;wark_z1&#39;)" type="button" value="wark_z1-warkusz"/><input name_attr="wark_z2" onclick="WinOpen(&#39;wark_z2&#39;)" type="button" value="wark_z2-warkusz"/><input name_attr="wark_z3" onclick="WinOpen(&#39;wark_z3&#39;)" type="button" value="wark_z3-warkusz"/><input name_attr="wark_z4" onclick="WinOpen(&#39;wark_z4&#39;)" type="button" value="wark_z4-warkusz"/><input name_attr="wark_z5" onclick="WinOpen(&#39;wark_z5&#39;)" type="button" value="wark_z5-warkusz"/><input name_attr="wark_z6" onclick="WinOpen(&#39;wark_z6&#39;)" type="button" value="wark_z6-warkusz"/><input name_attr="wark_z7" onclick="WinOpen(&#39;wark_z7&#39;)" type="button" value="wark_z7-warkusz"/><input name_attr="wark_z8" onclick="WinOpen(&#39;wark_z8&#39;)" type="button" value="wark_z8-warkusz"/><input name_attr="wark_z9" onclick="WinOpen(&#39;wark_z9&#39;)" type="button" value="wark_z9-warkusz"/><input name_attr="wark_z10" onclick="WinOpen(&#39;wark_z10&#39;)" type="button" value="wark_z10-warkusz"/><input name_attr="wark_z11" onclick="WinOpen(&#39;wark_z11&#39;)" type="button" value="wark_z11-warkusz"/><input name_attr="wark_z12" onclick="WinOpen(&#39;wark_z12&#39;)" type="button" value="wark_z12-warkusz"/><input name_attr="wark_z13" onclick="WinOpen(&#39;wark_z13&#39;)" type="button" value="wark_z13-warkusz"/><input name_attr="wark_z14" onclick="WinOpen(&#39;wark_z14&#39;)" type="button" value="wark_z14-warkusz"/><input name_attr="wark_z15" onclick="WinOpen(&#39;wark_z15&#39;)" type="button" value="wark_z15-warkusz"/><input name_attr="wark_z16" onclick="WinOpen(&#39;wark_z16&#39;)" type="button" value="wark_z16-warkusz"/><input name_attr="wark_z18" onclick="WinOpen(&#39;wark_z18&#39;)" type="button" value="wark_z18-warkusz"/><input name_attr="wark_z19" onclick="WinOpen(&#39;wark_z19&#39;)" type="button" value="wark_z19-warkusz"/><input name_attr="wark_z20" onclick="WinOpen(&#39;wark_z20&#39;)" type="button" value="wark_z20-warkusz"/><input name_attr="wark_z21" onclick="WinOpen(&#39;wark_z21&#39;)" type="button" value="wark_z21-warkusz"/><input type="button" value="wark_z23-warkusz" name="wark_z23" onclick="WinOpen(&#39;wark_z23&#39;)"/><input type="button" value="wark_z22-warkusz" name="wark_z22" onclick="WinOpen(&#39;wark_z22&#39;)"/><input type="button" value="wark_z24-warkusz" name="wark_z24" onclick="WinOpen(&#39;wark_z24&#39;)"/><input type="button" value="wark_z25-warkusz" name="wark_z25" onclick="WinOpen(&#39;wark_z25&#39;)"/><input type="button" value="wark_z26-warkusz" name="wark_z26" onclick="WinOpen(&#39;wark_z26&#39;)"/><input type="button" value="wark_z27-warkusz" name="wark_z27" onclick="WinOpen(&#39;wark_z27&#39;)"/></div>
 <h3>Kody do zadań</h3>
 <div class="buttons-group" id="zadania-kody">
-<input name_attr="wark_z11_kod" onclick="WinOpen('wark_z11_kod')" type="button" value="wark_z11_kod kod-warkusz"/><input name_attr="wark_z12_kod" onclick="WinOpen('wark_z12_kod')" type="button" value="wark_z12_kod kod-warkusz"/><input name_attr="wark_z13_kod" onclick="WinOpen('wark_z13_kod')" type="button" value="wark_z13_kod kod-warkusz"/><input name_attr="wark_z14_kod" onclick="WinOpen('wark_z14_kod')" type="button" value="wark_z14_kod kod-warkusz"/><input name_attr="wark_z15_kod" onclick="WinOpen('wark_z15_kod')" type="button" value="wark_z15_kod kod-warkusz"/><input name_attr="wark_z16_kod" onclick="WinOpen('wark_z16_kod')" type="button" value="wark_z16_kod kod-warkusz"/><input name_attr="wark_z18_kod" onclick="WinOpen('wark_z18_kod')" type="button" value="wark_z18_kod kod-warkusz"/><input name_attr="wark_z19_kod" onclick="WinOpen('wark_z19_kod')" type="button" value="wark_z19_kod kod-warkusz"/><input name_attr="wark_z20_kod" onclick="WinOpen('wark_z20_kod')" type="button" value="wark_z20_kod kod-warkusz"/></div>
+<input name_attr="wark_z11_kod" onclick="WinOpen(&#39;wark_z11_kod&#39;)" type="button" value="wark_z11_kod kod-warkusz"/><input name_attr="wark_z12_kod" onclick="WinOpen(&#39;wark_z12_kod&#39;)" type="button" value="wark_z12_kod kod-warkusz"/><input name_attr="wark_z13_kod" onclick="WinOpen(&#39;wark_z13_kod&#39;)" type="button" value="wark_z13_kod kod-warkusz"/><input name_attr="wark_z14_kod" onclick="WinOpen(&#39;wark_z14_kod&#39;)" type="button" value="wark_z14_kod kod-warkusz"/><input name_attr="wark_z15_kod" onclick="WinOpen(&#39;wark_z15_kod&#39;)" type="button" value="wark_z15_kod kod-warkusz"/><input name_attr="wark_z16_kod" onclick="WinOpen(&#39;wark_z16_kod&#39;)" type="button" value="wark_z16_kod kod-warkusz"/><input name_attr="wark_z18_kod" onclick="WinOpen(&#39;wark_z18_kod&#39;)" type="button" value="wark_z18_kod kod-warkusz"/><input name_attr="wark_z19_kod" onclick="WinOpen(&#39;wark_z19_kod&#39;)" type="button" value="wark_z19_kod kod-warkusz"/><input name_attr="wark_z20_kod" onclick="WinOpen(&#39;wark_z20_kod&#39;)" type="button" value="wark_z20_kod kod-warkusz"/></div>
 <input onclick="okno_zamknij()" type="button" value="zamknij okno"/>
 </div>
-</body>
-</html>
+
+
+</body></html>
