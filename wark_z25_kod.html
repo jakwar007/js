@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kod - zadanie 11</title>
+</head>
+<body>
+    <textarea style="width: 400px; height:850px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .kursywa {
+            font-style: italic;
+        }
+        *{
+            color:darkblue;
+            font-size:1.4cm;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        N0=<span id="n0"></span> [sztuk] <br>
+        t=<span id="t"></span> [lat] <br> 
+        T1/2=<span id="thalf"></span> [lat] <br>
+        &lambda;=<span id="lambda"></span> [1/rok] <br>
+        N=<span id="nresult"></span> [sztuk] <br>
+    </p>
+
+    <script>
+        let no = +prompt("Podaj No:");
+        let t = +prompt("Podaj t:");
+        let Thalf = +prompt("Podaj T 1/2:");
+
+        let lambda = Math.LN2 / Thalf;
+        let N = no * Math.pow(Math.E, (-lambda*t));
+        document.getElementById("lambda").innerHTML = lambda.toFixed(8);
+        document.getElementById("nresult").innerHTML = N.toFixed(8);
+        document.getElementById("n0").innerHTML = no;
+        document.getElementById("t").innerHTML = t;
+        document.getElementById("thalf").innerHTML = Thalf;
+    </script>
+    <!-- Jakub Warkusz -->
+</body>
+</html>
+    </textarea>
+</body>
+</html>

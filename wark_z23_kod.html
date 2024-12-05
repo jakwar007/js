@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kod - zadanie 11</title>
+</head>
+<body>
+    <textarea style="width: 400px; height:850px;">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <p>
+            Obliczanie odległości od drabiny i kąta
+        </p>
+        
+        <p>
+            Podaj d= <input type="number" id="d" /> &nbsp;Podaj x= <input type="number" id="x" />
+        </p>
+
+        <br><br>
+
+        <button id="calculate">
+            oblicz
+        </button>
+
+        <br><br>
+
+        <p>
+            Drabina= <input readonly type="text" id="ladder" />&nbsp; Alfa=<input readonly type="text" id="alfa" />
+        </p>
+
+        <script>
+            const readProperty = (id) => {
+                return +document.getElementById(id)?.value;
+            };
+
+            function calculateLadder(a, b) {
+                return Math.hypot(a, b);
+            };
+
+            function calculateAlfa(a, b) {
+                return Math.atan(a / b) * (180 / Math.PI)
+            };
+
+            document.getElementById("calculate").addEventListener("click", () => {
+                const [d, x] = ["d", "x"].map((key) => readProperty(key));
+                const ladder = calculateLadder(d, x);
+
+                document.getElementById("ladder").value = ladder.toFixed(2);
+                document.getElementById("alfa").value = calculateAlfa(d, x).toFixed(2);
+            });
+        </script>
+    </body>
+</html>
+    </textarea>
+</body>
+</html>

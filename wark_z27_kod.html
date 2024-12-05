@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kod - zadanie 11</title>
+</head>
+<body>
+    <textarea style="width: 400px; height:850px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <script>
+        const kat_war = +prompt("Podaj kąt");
+        const s_war = +prompt("Podaj drogę samolotu");
+
+        function calc(distance, angle) {
+            return {
+                kat: 90-angle,
+                wys: Math.sqrt(Math.pow(distance/Math.cos(angle*(Math.PI/180)), 2) - Math.pow(distance, 2))
+            };
+        };
+
+        const {kat,wys} = calc(s_war,kat_war);
+
+        document.write(
+            `Kąt: ${kat_war}&nbsp;&nbsp;Droga samolotu: ${s_war}<br>`,
+            `Drugi kąt: ${kat.toFixed(2)}<br>`,
+            `Wysokość: ${wys.toFixed(2)}<br>`
+        );
+    </script>
+</body>
+</html>
+    </textarea>
+</body>
+</html>
