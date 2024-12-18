@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = +prompt("Podaj bok A:");
+        const b = +prompt("Podaj bok B:");
+
+        for (let i = 0; i < b; i++) {
+            document.write("*");
+        };
+
+        document.write("<br />")
+        for (let i = 0; i < a - 2; i++) {
+            document.write("*");
+            for (let j = 0; j < b - 2; j++) {
+                document.write("&nbsp;&nbsp;")
+            }
+
+            document.write("*<br />")
+        }
+
+        for (let i = 0; i < b; i++) {
+            document.write("*");
+        };
+    </script>
+</body>
+</html>

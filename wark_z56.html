@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output"></div>
+    <button id="another-buttons">Kolejne</button>
+
+    <script>
+        let counter = 0;
+        const getValue = (num) => Math.pow(num, 2) + num + 41;
+        const addNewValues = () => {
+            const outputDiv = document.getElementById("output");
+
+            for (let i = counter; i < counter + 5; i++) {
+                const result = document.createElement("div");
+                result.textContent = `w(${i}) = ${getValue(i)}`;
+                outputDiv.appendChild(result);
+            };
+
+            counter += 5;
+
+            if (counter >= 40) {
+                document.getElementById("another-buttons").remove();
+            };
+        };
+
+        document.getElementById("another-buttons").addEventListener("click", addNewValues);
+        addNewValues();
+    </script>
+</body>
+</html>

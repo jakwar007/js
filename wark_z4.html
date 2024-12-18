@@ -1,9 +1,11 @@
-<!DOCTYPE html><html lang="pl"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Warkusz 2P</title>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Warkusz 2P</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -39,29 +41,82 @@
         }
         .buttons-group {
             margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
     </style>
-<script language="JavaScript">
+    <script>
+        const taskNumbers = [
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+            11, 12, 13, 14, 15, 16, 18, 19, 20,
+            21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+            31, 32, 35, 36, 37, 38, 39, 40, 43, 49,
+            52, 53, 54, 56, 59
+        ];
+
+        const codeTaskNumbers = [
+            11, 12, 13, 14, 15, 16, 18, 19, 20,
+            21, 22, 23, 24, 25, 26, 27, 30, 31, 32,
+            35, 36, 37, 39, 40, 43, 49, 52, 53, 54,
+            56, 59
+        ];
+
         function WinOpen(arg) {
             window.open(`${arg}.html`, "okienko", "toolbar=no,directories=no,menubar=no,height=480,width=700,top=200,left=400");
         }
+
         function okno_zamknij() {
             window.close();
         }
+
+        function createButton(value, name, onClick) {
+            const button = document.createElement('input');
+            button.type = 'button';
+            button.value = value;
+            button.name = name;
+            button.onclick = () => onClick(name);
+            return button;
+        }
+
+        function generateButtons() {
+            const zadaniaDiv = document.getElementById('zadania');
+            const kodyDiv = document.getElementById('zadania-kody');
+
+            taskNumbers.forEach(num => {
+                const buttonName = `wark_z${num}`;
+                const button = createButton(
+                    `wark_z${num}-warkusz`,
+                    buttonName,
+                    () => WinOpen(buttonName)
+                );
+                zadaniaDiv.appendChild(button);
+            });
+
+            codeTaskNumbers.forEach(num => {
+                const buttonName = `wark_z${num}_kod`;
+                const button = createButton(
+                    `wark_z${num}_kod kod-warkusz`,
+                    buttonName,
+                    () => WinOpen(buttonName)
+                );
+                kodyDiv.appendChild(button);
+            });
+        }
+
+        window.onload = generateButtons;
     </script>
 </head>
 <body>
-<h2>Szkielet zaliczeniowy JavaScript Jakub Warkusz 2P</h2>
-<div class="container">
-<h3>Zadania</h3>
-<div class="buttons-group" id="zadania">
-<input name_attr="wark_z1" onclick="WinOpen('wark_z1')" type="button" value="wark_z1-warkusz"/><input name_attr="wark_z2" onclick="WinOpen('wark_z2')" type="button" value="wark_z2-warkusz"/><input name_attr="wark_z3" onclick="WinOpen('wark_z3')" type="button" value="wark_z3-warkusz"/><input name_attr="wark_z4" onclick="WinOpen('wark_z4')" type="button" value="wark_z4-warkusz"/><input name_attr="wark_z5" onclick="WinOpen('wark_z5')" type="button" value="wark_z5-warkusz"/><input name_attr="wark_z6" onclick="WinOpen('wark_z6')" type="button" value="wark_z6-warkusz"/><input name_attr="wark_z7" onclick="WinOpen('wark_z7')" type="button" value="wark_z7-warkusz"/><input name_attr="wark_z8" onclick="WinOpen('wark_z8')" type="button" value="wark_z8-warkusz"/><input name_attr="wark_z9" onclick="WinOpen('wark_z9')" type="button" value="wark_z9-warkusz"/><input name_attr="wark_z10" onclick="WinOpen('wark_z10')" type="button" value="wark_z10-warkusz"/><input name_attr="wark_z11" onclick="WinOpen('wark_z11')" type="button" value="wark_z11-warkusz"/><input name_attr="wark_z12" onclick="WinOpen('wark_z12')" type="button" value="wark_z12-warkusz"/><input name_attr="wark_z13" onclick="WinOpen('wark_z13')" type="button" value="wark_z13-warkusz"/><input name_attr="wark_z14" onclick="WinOpen('wark_z14')" type="button" value="wark_z14-warkusz"/><input name_attr="wark_z15" onclick="WinOpen('wark_z15')" type="button" value="wark_z15-warkusz"/><input name_attr="wark_z16" onclick="WinOpen('wark_z16')" type="button" value="wark_z16-warkusz"/><input name_attr="wark_z18" onclick="WinOpen('wark_z18')" type="button" value="wark_z18-warkusz"/><input name_attr="wark_z19" onclick="WinOpen('wark_z19')" type="button" value="wark_z19-warkusz"/><input name_attr="wark_z20" onclick="WinOpen('wark_z20')" type="button" value="wark_z20-warkusz"/><input name_attr="wark_z21" onclick="WinOpen('wark_z21')" type="button" value="wark_z21-warkusz"/><input type="button" value="wark_z23-warkusz" name="wark_z23" onclick="WinOpen('wark_z23')"/><input type="button" value="wark_z22-warkusz" name="wark_z22" onclick="WinOpen('wark_z22')"/><input type="button" value="wark_z24-warkusz" name="wark_z24" onclick="WinOpen('wark_z24')"/><input type="button" value="wark_z25-warkusz" name="wark_z25" onclick="WinOpen('wark_z25')"/><input type="button" value="wark_z26-warkusz" name="wark_z26" onclick="WinOpen('wark_z26')"/><input type="button" value="wark_z27-warkusz" name="wark_z27" onclick="WinOpen('wark_z27')"/><input type="button" value="wark_z28-warkusz" name="wark_z28" onclick="WinOpen('wark_z28')"/><input type="button" value="wark_z29-warkusz" name="wark_z29" onclick="WinOpen('wark_z29')"/><input type="button" value="wark_z30-warkusz" name="wark_z30" onclick="WinOpen('wark_z30')"/><input type="button" value="wark_z31-warkusz" name="wark_z31" onclick="WinOpen('wark_z31')"/><input type="button" value="wark_z32-warkusz" name="wark_z32" onclick="WinOpen('wark_z32')"/><input type="button" value="wark_z35-warkusz" name="wark_z35" onclick="WinOpen('wark_z35')"/><input type="button" value="wark_z36-warkusz" name="wark_z36" onclick="WinOpen('wark_z36')"/><input type="button" value="wark_z37-warkusz" name="wark_z37" onclick="WinOpen('wark_z37')"/><input type="button" value="wark_z38-warkusz" name="wark_z38" onclick="WinOpen('wark_z38')"/><input type="button" value="wark_z39-warkusz" name="wark_z39" onclick="WinOpen('wark_z39')"/><input type="button" value="wark_z40-warkusz" name="wark_z40" onclick="WinOpen('wark_z40')"/></div>
-<h3>Kody do zadań</h3>
-<div class="buttons-group" id="zadania-kody">
-<input name_attr="wark_z11_kod" onclick="WinOpen(&#39;wark_z11_kod&#39;)" type="button" value="wark_z11_kod kod-warkusz"/><input name_attr="wark_z12_kod" onclick="WinOpen(&#39;wark_z12_kod&#39;)" type="button" value="wark_z12_kod kod-warkusz"/><input name_attr="wark_z13_kod" onclick="WinOpen(&#39;wark_z13_kod&#39;)" type="button" value="wark_z13_kod kod-warkusz"/><input name_attr="wark_z14_kod" onclick="WinOpen(&#39;wark_z14_kod&#39;)" type="button" value="wark_z14_kod kod-warkusz"/><input name_attr="wark_z15_kod" onclick="WinOpen(&#39;wark_z15_kod&#39;)" type="button" value="wark_z15_kod kod-warkusz"/><input name_attr="wark_z16_kod" onclick="WinOpen(&#39;wark_z16_kod&#39;)" type="button" value="wark_z16_kod kod-warkusz"/><input name_attr="wark_z18_kod" onclick="WinOpen(&#39;wark_z18_kod&#39;)" type="button" value="wark_z18_kod kod-warkusz"/><input name_attr="wark_z19_kod" onclick="WinOpen(&#39;wark_z19_kod&#39;)" type="button" value="wark_z19_kod kod-warkusz"/><input name_attr="wark_z20_kod" onclick="WinOpen(&#39;wark_z20_kod&#39;)" type="button" value="wark_z20_kod kod-warkusz"/><input name_attr="wark_z21_kod" onclick="WinOpen(&#39;wark_z21_kod&#39;)" type="button" value="wark_z21_kod kod-warkusz"/>
-<input name_attr="wark_z22_kod" onclick="WinOpen(&#39;wark_z22_kod&#39;)" type="button" value="wark_z22_kod kod-warkusz"/><input name_attr="wark_z23_kod" onclick="WinOpen(&#39;wark_z23_kod&#39;)" type="button" value="wark_z23_kod kod-warkusz"/><input name_attr="wark_z24_kod" onclick="WinOpen(&#39;wark_z24_kod&#39;)" type="button" value="wark_z24_kod kod-warkusz"/><input name_attr="wark_z26_kod" onclick="WinOpen(&#39;wark_z26_kod&#39;)" type="button" value="wark_z25_kod kod-warkusz"/><input name_attr="wark_z26_kod" onclick="WinOpen(&#39;wark_z26_kod&#39;)" type="button" value="wark_z26_kod kod-warkusz"/><input name_attr="wark_z27_kod" onclick="WinOpen(&#39;wark_z27_kod&#39;)" type="button" value="wark_z27_kod kod-warkusz"/><input name_attr="wark_z30_kod" onclick="WinOpen(&#39;wark_z30_kod&#39;)" type="button" value="wark_z30_kod kod-warkusz"/><input name_attr="wark_z31_kod" onclick="WinOpen(&#39;wark_z31_kod&#39;)" type="button" value="wark_z31_kod kod-warkusz"/><input name_attr="wark_z32_kod" onclick="WinOpen(&#39;wark_z32_kod&#39;)" type="button" value="wark_z32_kod kod-warkusz"/><input name_attr="wark_z35_kod" onclick="WinOpen(&#39;wark_z35_kod&#39;)" type="button" value="wark_z35_kod kod-warkusz"/><input name_attr="wark_z36_kod" onclick="WinOpen(&#39;wark_z36_kod&#39;)" type="button" value="wark_z36_kod kod-warkusz"/><input name_attr="wark_z37_kod" onclick="WinOpen(&#39;wark_z37_kod&#39;)" type="button" value="wark_z37_kod kod-warkusz"/><input name_attr="wark_z39_kod" onclick="WinOpen(&#39;wark_z39_kod&#39;)" type="button" value="wark_z39_kod kod-warkusz"/><input name_attr="wark_z40_kod" onclick="WinOpen(&#39;wark_z40_kod&#39;)" type="button" value="wark_z40_kod kod-warkusz"/></div>
-<input onclick="okno_zamknij()" type="button" value="zamknij okno"/>
-</div>
+    <h2>Szkielet zaliczeniowy JavaScript Jakub Warkusz 2P</h2>
+    <div class="container">
+        <h3>Zadania</h3>
+        <div class="buttons-group" id="zadania"></div>
 
+        <h3>Kody do zadań</h3>
+        <div class="buttons-group" id="zadania-kody"></div>
 
-</body></html>
+        <input type="button" value="zamknij okno" onclick="okno_zamknij()"/>
+    </div>
+</body>
+</html>

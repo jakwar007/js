@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kod - zadanie 11</title>
+</head>
+<body>
+    <textarea style="width: 400px; height:850px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punkty Kratowe</title>
+</head>
+<body>
+    <h1>Obliczanie liczby punktów kratowych w kole</h1>
+    <label for="radius">Promień koła (R):</label>
+    <input type="number" id="radius" step="0.01" min="0" value="0">
+    <button id="calculate">Oblicz</button>
+    <h2>Wynik</h2>
+    <p id="result">Liczba punktów kratowych: 0</p>
+
+    <script>
+        function liczbaPunktowKratowych(R) {
+            const RInt = Math.ceil(R);
+            let licznik_war = 0;
+
+            for (let i_war = -RInt - 1; i_war <= RInt + 1; i_war++) {
+                for (let j_war = -RInt - 1; j_war <= RInt + 1; j_war++) {
+                    if (i_war ** 2 + j_war ** 2 <= R ** 2) {
+                        licznik_war++;
+                    };
+                };
+            };
+
+            return licznik_war;
+        };
+        
+        document.getElementById("calculate").addEventListener("click", () => {
+            const R = +document.getElementById("radius").value;
+            if (isNaN(R) || R < 0) {
+                alert("Podaj poprawny promień (liczbę nieujemną).");
+                return;
+            };
+
+            const wynik = liczbaPunktowKratowych(R);
+            document.getElementById("result").textContent = `Liczba punktów kratowych: ${wynik}`;
+        });
+    </script>
+</body>
+</html>
+</textarea>
+</body>
+</html>
